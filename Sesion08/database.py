@@ -32,7 +32,7 @@ class MySQLDB:
         except mysql.connector.Error as error:
             print("Error")
 
-    def execute_querry(self, query, params=None):
+    def execute_query(self, query, params=None):
         try:
             cursor = self.connection.cursor()
             cursor.execute(query, params)
@@ -41,9 +41,9 @@ class MySQLDB:
         except mysql.connector.Error as err:
             print(f"Error: {err}")
 
-db = MySQLDB("localhost", "root", "123", "test")
-print("Conectado")
+db = MySQLDB("localhost", "root", "", "testlp")
+#print("Conectado")
 
 db.connect()
 #db.disconnect()
-#categorias = db.execute_querry("select * from categorias")
+#categorias = db.execute_query("select * from categorias")
